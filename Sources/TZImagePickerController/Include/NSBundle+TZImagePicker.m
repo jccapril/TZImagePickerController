@@ -8,14 +8,12 @@
 
 #import "NSBundle+TZImagePicker.h"
 #import "TZImagePickerController.h"
-#import <Foundation/Foundation.h>
 
 @implementation NSBundle (TZImagePicker)
 
 + (NSBundle *)tz_imagePickerBundle {
 #ifdef SWIFT_PACKAGE
-    NSURL *bundleURL = [[[NSBundle mainBundle] bundleURL] URLByAppendingPathComponent:@"TZImagePickerController"];
-    NSBundle *bundle =[NSBundle bundleWithURL:bundleURL];
+    NSBundle *bundle = SWIFTPM_MODULE_BUNDLE;
 #else
     NSBundle *bundle = [NSBundle bundleForClass:[TZImagePickerController class]];
 #endif
