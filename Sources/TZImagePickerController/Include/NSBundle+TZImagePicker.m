@@ -16,11 +16,12 @@
     NSBundle *bundle = SWIFTPM_MODULE_BUNDLE;
 #else
     NSBundle *bundle = [NSBundle bundleForClass:[TZImagePickerController class]];
+    NSURL *url = [bundle URLForResource:@"TZImagePickerController" withExtension:@"bundle"];
+    bundle = [NSBundle bundleWithURL:url];
 #endif
     
 
-    NSURL *url = [bundle URLForResource:@"TZImagePickerController" withExtension:@"bundle"];
-    bundle = [NSBundle bundleWithURL:url];
+    
     return bundle;
 }
 
